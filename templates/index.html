@@ -56,7 +56,7 @@
     {% endifequal %}
 	<dl>
 	    {% for news in newslist %}
-	        <dt>{{ news.posted }}</dt><dd id="{{ news.key }}>{% if news.link %}<a href="{{ news.link }}" target="_blank">{% endif %}{{ news.title }}{% if news.link %}</a>{% endif %}</dd>
+	        <dt>{{ news.posted }}</dt><dd id="{{ news.key }}">{% if news.link %}<a href="{{ news.link }}" target="_blank">{% endif %}{{ news.title }}{% if news.link %}</a>{% endif %}</dd>
         {% endfor %}
 	</dl>
 </div>
