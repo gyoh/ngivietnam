@@ -1,0 +1,9 @@
+{% extends "base.html.ja" %}
+
+{% block title %}ご指定のページは見つからないか、閲覧が許可されていません。{% endblock %}
+
+{% block content %}
+			<div class="message_area">
+				ご指定のページは見つからないか、閲覧が許可されていません。
+			</div>
+{% endblock %}

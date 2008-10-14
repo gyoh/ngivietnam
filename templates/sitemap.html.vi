@@ -1,0 +1,22 @@
+{% extends "base.html.vi" %}
+
+{% block title %}Bố cục trang web{% endblock %}
+
+{% block content %}
+			<h2>Bố cục trang web</h2>
+			<div class="sitemap">
+				<dl>
+					<dt><a href="/vi/">Trang chủ</a></dt>
+					<dt>Dịch vụ</dt>
+					<dd>[ <a href="/vi/service">Dịch vụ</a> | <a href="/vi/service/contact">Địa chỉ liên lạc</a> ]</dd>
+					<dt>Phòng báo</dt>
+					<dd>[ <a href="/vi/press">Tin mới nhất</a> ]</dd>
+					<dt>Thông tin về công ty</dt>
+					<dd>[ <a href="/vi/company">Giới thiệu về công ty</a> | <a href="/vi/company/mission">Sứ mệnh</a> | <a href="/vi/company/business">Nội dung hoạt động</a> ]
+					<dt>Thông tin tuyển dụng</dt>
+					<dd>[ <a href="/vi/recruit">Tuyển dụng</a> | <a href="/vi/recruit/contact">Địa chỉ liên lạc</a> ]</dd>
+					<dt class="out_link"><a href="http://www.ngigroup.com/jp/contact/index.html" target="_blank">Địa chỉ liên lạc</a></dt>
+					<dt class="out_link"><a href="http://www.ngigroup.com/jp/privacy/index.html" target="_blank">Cách bảo mật thông tin</a></dt>
+				</dl>
+			</div>
+{% endblock %}

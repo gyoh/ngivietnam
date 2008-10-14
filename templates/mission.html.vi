@@ -1,0 +1,37 @@
+{% extends "base_sidenavi.html.vi" %}
+
+{% block title %}Giới thiệu về công ty&nbsp;&gt;&nbsp;Sứ mệnh{% endblock %}
+
+{% block content %}
+			<h2>Sứ mệnh</h2>
+			<div class="box">
+				<h3>Vietnamese Market Accelerator</h3>
+				<p>
+                    Ngi là tên viết tắt tiếng Anh của Next Generation Innovator,
+                    mang ý nghĩa là trên cơ sở vì sự nghiệp kiến thiết xã hội Việt Nam
+                    trong thời đại tiếp theo, công ty chúng tôi sẽ kích hoạt thị trường
+                    doanh nghiệp mới, khơi dậy tinh thần của các nhà khởi nghiệp.
+                </p>
+                <h3>Asian Ventures Networking Hub</h3>
+                <p>
+                    Bắt đầu từ vai trò làm cầu nối giữa Việt Nam và Nhật Bản,
+                    từ đó hình thành lên hệ thống đầu tư  trên toàn khu vực châu Á.
+				</p>
+			</div>
+			<h2>Phương châm hoạt động</h2>
+			<div class="box">
+				<h3>Collaboration Partner</h3>
+				<p>
+                    Chúng tôi nguyện hết sức đồng hành cùng các doanh nghiệp là đối
+                    tượng của lĩnh vực venture &amp; incubation.
+                </p>
+			</div>
+{% endblock %}
+
+{% block sidenavi %}
+            <ul>
+	            <li><a href="/vi/company">Giới thiệu</a></li>
+	            <li class="active"><a href="/vi/company/mission">Sứ mệnh</a></li>
+	            <li><a href="/vi/company/business">Hoạt động</a></li>
+            </ul>
+{% endblock %}

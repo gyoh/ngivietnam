@@ -1,0 +1,128 @@
+{% extends "base_sidenavi.html.ja" %}
+
+{% block title %}採用情報{% endblock %}
+
+{% block pagetop %}<a name="top"></a>{% endblock %}
+
+{% block content %}
+			<h2>募集職種と要項</h2>
+			<div class="box">
+			    {% ifequal jobcount 0 %}
+			    <p>現在ngi vietnamで募集している職種はありません。</p>
+			    {% endifequal %}
+				<ul>
+    				{% for job in jobs %}
+    				    <li><a href="#{{ job.key }}">{{ job.title }}</a></li>
+    				{% endfor %}
+					<li class="list2"><a href="#senkou">選考フロー</a></li>
+					<li class="list2"><a href="#oubo">応募方法</a></li>
+				</ul>
+				<p></p>
+			</div>
+			
+			<!--選考フロー-->
+			<a name="senkou"></a>
+			<div class="box">
+				<h3>選考フロー</h3>
+				<dl class="selection">
+					<dt><img src="/images/recruit_step1.gif" alt="書類選考" /></dt>
+					<dd>応募書類を担当部門が確認して、選考をおこないます。<br />書類選考は迅速に行いますが、1～2週間程度お時間をいただく場合があります。</dd>
+					<dt><img src="/images/recruit_step2.gif" alt="一次面接" /></dt>
+					<dd>書類選考通過者のみ、担当部門による一次面接をおこないます。</dd>
+					<dt><img src="/images/recruit_step3.gif" alt="二次面接" /></dt>
+					<dd>一次面接通過者のみ、部門責任者によるニ次面接をおこないます。<br />必要に応じて複数回の面接がおこなわれる場合があります。</dd>
+					<dt><img src="/images/recruit_step4.gif" alt="内定" /></dt>
+					<dd>二次面接を通過した方には、内定通知をお送りします。</dd>
+					<dt><img src="/images/recruit_step5.gif" alt="入社" /></dt>
+					<dd>入社時期は相談に応じます。</dd>
+				</dl>
+			</div>
+			<p class="right"><a href="#top"><img src="/images/pagetop.gif" alt="ページトップ"></a></p>
+			<!--//選考フロー-->
+			
+			<!--応募方法-->
+			<a name="oubo"></a>
+			<div class="box">
+				<h3>応募方法</h3>
+				<p>
+					応募は、<a href="/ja/recruit/contact">採用に関するご相談・お問合わせフォーム</a>にて受け付けております。各職種の募集要綱をご確認の上、必要な情報を記入して送信してください。
+					弊社担当者より履歴書、職務経歴書の送付先をご連絡いたします。<br /><br />
+					また、応募の際はお手数ですが下記5点を明記してください。
+					<ul>
+						<li class="method">お名前</li>
+						<li class="method">応募職種</li>
+						<li class="method">応募理由</li>
+						<li class="method">どのように弊社に貢献できるか</li>
+						<li class="method">入社可能日</li>
+					</ul>
+				</p>
+				<p class="right"><span class="in_link"><a href="/ja/recruit/contact">採用に関するご相談・お問合わせフォームへ</a></span></p>
+				<p>
+					応募の秘密は厳守いたします。応募受付後1～2週間で、メール・お電話・郵送のいずれかにて 書類選考結果をご連絡いたします。
+					応募書類は返却いたしません。また選考結果の理由についてのお問い合わせには応じかねますのであらかじめご了承ください。
+				</p>
+			</div>
+			<p class="right"><a href="#top"><img src="/images/pagetop.gif" alt="ページトップ"></a></p>
+			<!--//応募方法ー-->
+			
+			{% for job in jobs %}
+			<!--{{ job.title }}-->
+			<a name="{{ job.key }}"></a>
+			<div class="box recruit">
+				<h3>{{ job.title }}</h3>
+				<div class="recruit_recruit">
+					<table>
+						<tr>
+							<th>所属部門</th>
+							<td>{{ job.unit }}</td>
+						</tr>
+						<tr>
+							<th>勤務地</th>
+							<td>{{ job.location }}</td>
+						</tr>
+						<tr>
+							<th>掲載日</th>
+							<td>{{ job.posted }}</td>
+						</tr>
+						<tr>
+							<th>業務内容</th>
+							<td>
+							    {{ job.responsibilities }}
+							</td>
+						</tr>
+						<tr>
+							<th>応募資格</th>
+							<td>
+							    {{ job.qualifications }}
+							</td>
+						</tr>
+						<tr>
+							<th>歓迎するスキル・業務経験</th>
+							<td>
+						        {{ job.desired }}
+							</td>
+						</tr>
+						<tr>
+							<th>給与</th>
+							<td>{{ job.salary }}</td>
+						</tr>
+						<tr>
+							<th>その他</th>
+							<td>
+							    {{ job.general }}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<p class="right"><a href="#top"><img src="/images/pagetop.gif" alt="Page Top"></a></p>
+			<!--//{{ job.title }}-->
+			{% endfor %}
+{% endblock %}
+
+{% block sidenavi %}
+		<ul>
+			<li class="active"><a href="/ja/recruit">募集職種</a></li>
+			<li><a href="/ja/recruit/contact">ご相談・お問合せ</a></li>
+		</ul>
+{% endblock %}

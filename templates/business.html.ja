@@ -1,0 +1,29 @@
+{% extends "base_sidenavi.html.ja" %}
+
+{% block title %}会社概要&nbsp;&gt;&nbsp;事業内容{% endblock %}
+
+{% block content %}
+			<h2>事業内容</h2>
+			<div class="box">
+				<h3>投資事業</h3>
+				<p>
+					2009年度にUSD25Mの投資ファンド組成します。（予定）<br />
+                    学生企業、ベンチャー、OTC市場、上場企業まで、新興企業を幅広くカバーします。
+				</p>
+				<h3>プロフェッショナル・インキュベーション・サービス事業</h3>
+				<p>
+					ベトナム市場成長に則した事業機会を発掘し、資金提供・経営支援・技術開発などの
+                    経験豊富な人材によるプロフェッショナル・インキュベーション・サービスを展開します。
+				</p>
+				
+				<p class="right last"><span class="in_link">具体的な業務は<a href="/ja/service">サービス内容</a>をご覧ください</span></p>
+			</div>
+{% endblock %}
+
+{% block sidenavi %}
+            <ul>
+	            <li><a href="/ja/company">会社概要</a></li>
+	            <li><a href="/ja/company/mission">ミッション</a></li>
+	            <li class="active"><a href="/ja/company/business">事業内容</a></li>
+            </ul>
+{% endblock %}

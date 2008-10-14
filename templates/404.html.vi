@@ -1,0 +1,9 @@
+{% extends "base.html.vi" %}
+
+{% block title %}Không tìm thất trang nào như trên, hoặc trang này không được trình duyệt.{% endblock %}
+
+{% block content %}
+			<div class="message_area">
+				Không tìm thất trang nào như trên, hoặc trang này không được trình duyệt.
+			</div>
+{% endblock %}

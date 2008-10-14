@@ -1,0 +1,63 @@
+{% extends "base.html.vi" %}
+
+{% block title %}Trang chủ{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+<script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/ext/ext-all.js"></script>
+<script type="text/javascript">
+    Ext.onReady(function(){
+    	{% for news in newslist %}
+    	    {% if news.content %}
+                new Ext.ToolTip({
+                    target: '{{ news.key }}',
+                    html: '<div align="left">{{ news.content|linebreaks }}</div>',
+                    width: 400,
+                    trackMouse: true
+                });
+            {% endif %}
+        {% endfor %}
+        Ext.QuickTips.init();
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<h2 class="top">ngi vietnam<br />brings "Next Generation Innovation" to the Vietnam venture market</h2>
+<!--
+<div class="top_service">
+		<div class="index">
+			<a href="./service/index.html">
+				<img src="./image/sp.gif" width="210" height="15" alt="豊富なサービス" />
+				新規技術開発からインフラ支援まで、ニーズに沿ったチーム構成でビジネスをサポート
+			</a>
+		</div>
+		
+		<div class="work">
+			<a href="./service/work.html">
+				<img src="./image/sp.gif" width="210" height="15" alt="幅広い開発実績" />
+				企業向けからコンシューマー向けまで、ビジネスプランに応じたインキュベーションの実績
+			</a>
+		</div>
+	
+		<div class="methodology">
+			<a href="./service/methodology.html">
+				<img src="./image/sp.gif" width="210" height="15" alt="独自の開発スタイル" />
+				経験に基づいた開発手法や取組みで、高品質なサービスをスピーディに低コストで開発
+			</a>
+		</div>
+</div>
+-->
+<div class="box top_news">
+	<h3>Tin mới nhất</h3>
+    {% ifequal newscount 0 %}
+        <p>Hiện tại chưa có thông tin mới nào khác.</p>
+    {% endifequal %}
+	<dl>
+	    {% for news in newslist %}
+	        <dt>{{ news.posted }}</dt><dd id="{{ news.key }}">{% if news.link %}<a href="{{ news.link }}" target="_blank">{% endif %}{{ news.title }}{% if news.link %}</a>{% endif %}</dd>
+        {% endfor %}
+	</dl>
+</div>
+{% endblock %}

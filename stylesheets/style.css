@@ -1,0 +1,1140 @@
+﻿@charset "utf-8";
+@import url("reset.css");
+
+/*-------------------------
+  # netage BaseTemplateCSS
+  # update 2007.03.26
+  -------------------------*/
+
+/* ************************************************ 
+ *	共通設定
+ * ************************************************ */
+
+
+/*------------------------------------
+↓主な小物
+-------------------------------------*/
+ul,dl,div {zoom:1;}
+ul:after,dl:after,div:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+
+.message  {color:#666;}
+.exe      {color:#006699;}
+.error    {color:red;}
+.must     {color:#FF6600;}
+
+.center   {text-align:center;}
+.left     {text-align:left;}
+.right    {text-align:right;}
+
+.fontsize_xlarge {font-size:134%;}
+.fontsize_large  {font-size:112%;}
+.fontsize_small  {font-size:77%;}
+.fontsize_xsmall {font-size:66%;}
+
+.out_link {
+	padding-left:17px;
+	background:url(../image/y_btn_gray.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.in_link {
+	padding-left:17px;
+	background:url(../image/y_btn_orange.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+/*------------------------------------
+ *↓ページレイアウト（大枠）
+ * --------------------------------- */
+body {
+	font-size: 80%; /* モダンブラウザ向け */
+	*font: x-small;  /* IE 6以下 */
+	line-height:1.0;
+	/*font-family:Meiryo,Verdana,"ヒラギノ角ゴ Pro W3",osaka,"ＭＳ Ｐゴシック",sans-serif;*/
+	font-family:verdana,"ヒラギノ角ゴ Pro W3",osaka,"ＭＳ Ｐゴシック",sans-serif;
+	color:#444444;
+	text-align:center;						/*-----左寄せにする場合はココを削除する(1)【2箇所あります！】-----*/
+	background:url(../image/back_body.jpg);
+}
+
+
+/*　ページ全体の幅、レイアウトをセンタリング　*/
+#container {
+	width:800px;
+	margin:0px auto;						/*-----左寄せにする場合はココを削除する(2)【2箇所あります！】-----*/
+	text-align:left;
+}
+
+/*　ヘッダー（ページタイトル、グローバルメニュー）　*/
+#header {
+	position:relative;
+	width:100%;
+	height:70px;
+	padding:0px 10px;
+	background:url(../image/back_container.jpg) repeat-y;
+}
+
+
+
+/*　グローバルナビ　*/
+#globalnavi {
+	width:100%;
+	height:23px;
+	padding:0px 10px;
+	background:url(../image/back_container.jpg) repeat-y;
+}
+
+/*　コンテンツを囲む　*/
+#wrapper {
+	float:left;
+	width:100%;
+	padding:22px 10px 0px 10px;
+	background:url(../image/back_container.jpg) repeat-y;
+}
+
+
+/*　コンテンツの幅　*/
+#contents {
+	/*overflow:auto;*/
+	min-height:365px;
+	_height:365px;
+	padding:0px 16px;
+	line-height:1.6;
+	background-color:#fff;
+}
+
+
+/*　サイドカラムの幅　*/
+#sidenavi  {
+	/*overflow:auto;*/
+	width:169px;
+	margin-top:22px;
+}
+
+
+
+/*-------------------
+ *左サイド
+ * ------------------- */
+/*　コンテンツの幅　*/
+.navi_left #contents {margin:0px 0px 0px 169px; padding:0px 40px 0px 24px; border-left:1px solid #DEE8F1;}
+.navi_none #contents {padding:0px 40px 0px 40px;}
+
+/*　サイドカラムの幅　*/
+.navi_left #sidenavi {float: left; margin-left:-810px;}
+
+/*-------------------
+ *右サイド
+ * ------------------- */
+/*　コンテンツの幅　*/
+.navi_right #contents {margin:0px 200px 0px 0px;}
+
+/*　サイドカラムの幅　*/
+.navi_right #sidenavi {float: right; margin-left:-200px;}
+
+/*-------------------
+ *両サイド
+ * ------------------- */
+ /*　コンテンツの幅　*/
+.navi_both #contents {margin:0px 200px 0px 200px;}
+
+/*　左カラムの幅　*/
+.navi_both #sidenavi {float: left; margin-left:-800px;}
+
+/*　右カラムの幅　*/
+#sidenavi_second {
+	overflow:auto;
+	float: right;
+	width:200px;
+	margin-left:-200px;
+	background-color:#888;
+}
+
+
+
+/*　フッター（コピーライト）　*/
+#footer {
+	clear:both;
+	width:100%;
+	padding:44px 10px 0px 10px;
+	font-size:77%;
+	background:url(../image/back_foot.jpg) no-repeat;
+}
+
+
+
+
+
+
+
+
+
+/* ************************************************ 
+ *	ページレイアウト（大枠の中：個人的な設定）
+ * ************************************************ */
+
+/*+++++++++　header内要素　+++++++++*/
+
+#header h1 {
+	float:left;
+	width:279px;
+	height:48px;
+	padding:12px 0px 10px 19px;
+}
+
+
+#header ul.language {
+	float:right;
+	padding:12px 16px 12px 15px;
+    color:#fff;
+	font-size: 77%;
+}
+
+#header ul.language li {
+	display:inline;
+	margin-left:10px;
+	padding:0px 0px 0px 15px;
+	background:url(../image/y_btn_orange.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#header form.search{
+	clear:right;
+	float:right;
+	height:25px;
+	width:233px;
+	padding-top:16px;
+	padding-right:15px;
+	*padding-top:16px;
+	*padding-right:5px;
+	text-align:right;
+}
+
+
+#header form.search label,
+#header form.search #ss0,
+#header form.search #ss1{
+	visibility:hidden;
+	display:none;
+	}
+
+#header form.search #sbi {
+	float:left;
+	margin:3px 2px 2px 2px;
+	width:133px;
+	*width:120px;
+}
+
+#header form.search #sbb {
+	float:right;
+	width:90px;
+	height:25px;
+	*margin-right:10px;
+}
+
+/* safari only \*/
+html:\66irst-child #header form.search #sbb{
+	margin-top:3px;
+}
+/* end */
+
+
+
+#header a:link    {color:#3C7BAB; text-decoration:underline;}
+#header a:visited {color:#5085AD; text-decoration:underline;}
+#header a:hover   {color:#6CABDB; text-decoration:underline;}
+#header a:active  {color:#043A68; text-decoration:none;}
+
+
+/*+++++++++　globalnavi内要素　+++++++++*/
+
+#globalnavi ul {margin:0px 16px;}
+
+#globalnavi li {
+	list-style:none;
+	display:inline;
+}
+
+#globalnavi li.home a,
+#globalnavi li.home a.active,
+#globalnavi li.service a,
+#globalnavi li.service a.active,
+#globalnavi li.press a,
+#globalnavi li.press a.active,
+#globalnavi li.company a,
+#globalnavi li.company a.active {
+	width:153px;
+	height:23px;
+	float:left;
+	list-style:none;
+}
+
+#globalnavi li.recruit a,
+#globalnavi li.recruit a.active {
+	width:152px;
+	height:23px;
+	float:left;
+	list-style:none;
+}
+
+#globalnavi li.home img,
+#globalnavi li.service img,
+#globalnavi li.press img,
+#globalnavi li.company img{width:153px; height:23px; margin:0px;}
+#globalnavi li.recruit img{width:152px; height:23px;}
+ 
+#globalnavi li a, #globalnavi li a.active {
+    font-size:12px;
+	text-align:center;
+	text-decoration:none;
+    line-height:22px;
+}
+
+#globalnavi li.home a,
+#globalnavi li.service a,
+#globalnavi li.press a,
+#globalnavi li.company a {background:#E7E6DF none repeat scroll 0 0; color:#002651; border-right:1px solid #CDCDCB;}
+#globalnavi li.recruit a {background:#E7E6DF none repeat scroll 0 0; color:#002651;}
+
+#globalnavi li.home a:hover,
+#globalnavi li.service a:hover,
+#globalnavi li.press a:hover,
+#globalnavi li.company a:hover,
+#globalnavi li.recruit a:hover {background:#9BA4A4 none repeat scroll 0 0;}
+
+#globalnavi li.home a.active,
+#globalnavi li.home a.active:hover,
+#globalnavi li.service a.active,
+#globalnavi li.service a.active:hover,
+#globalnavi li.press a.active,
+#globalnavi li.press a.active:hover,
+#globalnavi li.company a.active,
+#globalnavi li.company a.active:hover,
+#globalnavi li.recruit a.active,
+#globalnavi li.recruit a.active:hover {background:#002651 none repeat scroll 0 0; color:#FFFFFF;}
+
+
+
+
+
+/*+++++++++　contents内要素　+++++++++*/
+
+/*トップページのみの設定*/
+#contents div.top_service {margin-top:10px;}
+
+#contents div.top_service a,
+#contents div.top_service a:visited,
+#contents div.top_service a:hover {
+	text-decoration:none;
+	cursor: pointer;
+	display:block;
+	padding:15px 20px 15px 20px;
+	width:208px;
+	height:82px;
+	line-height:1.3;
+	color:#2B4A63;
+}
+
+*html #contents div.top_service a,
+*html #contents div.top_service a:visited,
+*html #contents div.top_service a:hover {
+	padding:15px 19px 15px 19px;
+}
+
+#contents div.top_service div {
+	float:left;
+	display:block;
+	border:1px solid #DDD;
+}
+
+#contents div.top_service div.index,
+#contents div.top_service div.work {margin-right:9px;}
+
+#contents div.top_service div.index {background:url(../image/top_service_index.gif) no-repeat;}
+#contents div.top_service div.index a:hover {background:url(../image/top_service_index_hover.gif) no-repeat;}
+#contents div.top_service div.work {background:url(../image/top_service_work.gif) no-repeat;}
+#contents div.top_service div.work a:hover {background:url(../image/top_service_work_hover.gif) no-repeat;}
+#contents div.top_service div.methodology {background:url(../image/top_service_methodology.gif) no-repeat;}
+#contents div.top_service div.methodology a:hover {background:url(../image/top_service_methodology_hover.gif) no-repeat;}
+
+
+#contents h2.top{
+    background:url(../image/main_image.jpg) no-repeat;
+	width:728px;
+	height:60px;
+    padding:80px 20px 20px 20px;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+#contents div.top_service img {clear:both; display:block; padding-bottom:12px;}
+
+#contents div.top_news {margin:18px 0px 18px 0px;}
+
+
+
+#contents ul.top_bnr {margin-top:30px;}
+
+#contents ul.top_bnr li {
+	margin-right:9px;
+	list-style:none;
+	float:right;
+}
+
+#contents ul.top_bnr li.last {
+	margin-right:0px;
+}
+
+
+
+/*--------------------*/
+
+
+
+#contents a:link    {color:#3C7BAB; text-decoration:underline;}
+#contents a:visited {color:#5085AD; text-decoration:underline;}
+#contents a:hover   {color:#6CABDB; text-decoration:underline;}
+#contents a:active  {color:#043A68; text-decoration:none;}
+
+
+/*　h2の設定　*/
+#contents h2{
+	margin-bottom:18px;
+	padding-bottom:2px;
+	font-size: 149%;
+	color: #002651;
+	background:url(../image/back_title.gif) repeat-x;
+	background-position: bottom;
+}
+
+
+/*　h3の設定　*/
+#contents .box h3{
+	margin-bottom:7px;
+	padding:3px 6px 3px 20px;
+	font-size: 124%;
+	font-weight:bold;
+	background:url(../image/back_subtitle.gif) repeat-x;
+}
+#contents .recruit_guide_navi h3,
+#contents .tradition h3,
+#contents .service_work h4{
+	margin-bottom:7px;
+	padding:3px 6px 0px 20px;
+	font-size: 134%;
+	font-weight:bold;
+	color:#2B4A63;
+	background:url(../image/back_subtitle_work.gif) no-repeat;
+	background-position: left bottom;
+}
+
+#contents h3 img {
+	margin-bottom:14px;
+	text-align:center;
+	font-size: 134%;
+	font-weight:bold;
+}
+
+
+/*contentsの中のdivの設定*/
+#contents div.service,
+#contents div.service_work,
+#contents div.qanda,
+#contents div.recruit,
+#contents div.pressroom {
+	padding-bottom:34px;
+}
+
+/*　pの設定　*/
+#contents p {
+	margin-left:13px;
+	padding-bottom:24px;
+}
+
+
+#contents p.last {
+	padding-bottom:0px;
+}
+
+
+
+/*　ul liの設定　*/
+#contents .box ul {
+	margin-left:20px;
+	list-style-type:none;
+}
+
+#contents .box ul li{
+	padding-left:13px;
+	line-height:2.0;
+	background:url(../image/y_list.gif) no-repeat;
+	background-position: left center;
+}
+
+#contents .box ul li.list2{ 
+	background:url(../image/y_list_navy.gif) no-repeat; 
+	background-position: left center; 
+} 
+
+#contents .box ul li.method{
+	background:url(../image/dot.gif) no-repeat;
+	background-position: left center;
+}
+
+
+
+/* contact form */
+#contents .contact th {
+    background:#FFFFFF none repeat scroll 0 0;
+    border:0px;
+    font-size:12px;
+    font-weight:bold;
+    padding:3px;
+    width:14%;
+    text-align:right;
+    vertical-align:top;
+}
+
+#contents .contact td {
+    background:#FFFFFF none repeat scroll 0 0;
+    border:0px;
+    padding:3px;
+}
+
+#contents .contact input.text, textarea {
+    background:#FFFFFF none repeat scroll 0 0;
+    border:1px solid #8496BA;
+    padding:2px;
+}
+
+
+
+/*　ol liの設定　*/
+#contents .box ol{
+	list-style-type: decimal;
+}
+
+#contents .box ol.selection{
+	margin-left:33px;
+}
+
+#contents .tradition ol{
+	display:block;
+	clear:right;
+	list-style-type: decimal;
+	padding-left:300px;
+}
+
+
+
+
+
+/*サイトマップ*/
+#contents div.sitemap dl {
+	margin-left:20px;
+}
+
+#contents div.sitemap dl dt{ 
+	padding-left:13px; 
+	line-height:3.0; 
+	background:url(../image/y_list.gif) no-repeat; 
+	background-position: left center; 
+} 
+#contents div.sitemap dl dt.out_link{ 
+	padding-left:13px; 
+	line-height:3.5; 
+	background:url(../image/y_list_gray.gif) no-repeat; 
+	background-position: left center; 
+} 
+
+
+
+
+
+/*ニュース*/
+#contents .top_news dl,
+#contents .pressroom dl {
+	margin-left:20px;
+	line-height:2.0;
+}
+#contents .top_news dl dt,
+#contents .pressroom dl dt{
+	float:left;
+	padding-left:13px;
+	width:83px;
+	background:url(../image/y_list_navy.gif) no-repeat;
+	background-position: left center;
+}
+#contents .top_news dl dd,
+#contents .pressroom dl dd{
+	padding-left:96px;
+}
+
+#contents .pressroom p.title{
+	padding-bottom:5px;
+	font-weight:bold;
+}
+
+
+
+
+/*サービス内容*/
+#contents .service p.title{
+	padding-bottom:5px;
+	font-weight:bold;
+}
+
+#contents .service dl{
+	margin-left:20px;
+}
+
+#contents .service dt{
+	padding:0px 0px 0px 13px;
+	line-height:1.6;
+	font-weight:bold;
+	background:url(../image/dot.gif) no-repeat;
+	background-position: left center;
+}
+
+#contents .service dt span{
+	margin-left:12px;
+	font-weight:lighter;
+}
+
+#contents .service dd{
+	margin-left:12px;
+	padding-bottom:22px;
+}
+
+
+
+
+/*実績紹介*/
+#contents .service_work p.catch{
+	clear:left;
+	margin-left:20px;
+	padding:0px 0px 10px 0px;
+	color:#2B4A63;	
+}
+
+#contents .service_work p.release{
+	clear:right;
+	position:relative;
+	top:-30px;
+	float:right;
+	padding:6px 0px 0px 0px;
+	text-align:right;
+	font-size:77%;
+}
+
+#contents .service_work_detail {
+	float:left;
+	padding-left:20px;
+	width:310px;
+}
+
+#contents .service_work_detail p{
+	margin-left:0px;
+	padding:5px 5px;
+	background-color:#f2f2ed;	
+}
+
+#contents .service_work_image {
+	clear:none;
+	float:right;
+	margin-left:10px;
+	width:220px;
+	text-align:right;
+}
+
+#contents .service_work_image img {
+	margin-bottom:5px;
+	border:1px solid #ccc;
+}
+
+
+
+
+/*　会社情報　*/
+.company_info,
+.recruit_recruit{
+padding:5px;
+border: 1px solid #E6E6E5;
+background-color:#F0EFEB;
+}
+
+
+
+/*　採用情報--トップ　*/
+#contents .recruit_index div.detail {
+	float:left;
+	width:346px;
+}
+
+#contents .recruit_index div.detail img {
+	padding-top:11px;
+	padding-bottom:18px;
+}
+
+#contents .recruit_navi {
+	float:right;
+	width:220px;
+}
+
+#contents .recruit_navi img.btn {
+	margin-left:9px;
+	padding-bottom:6px;
+}
+#contents div.recruit_navi div.title {
+	margin-left:9px;
+	padding-bottom:0px;
+	width:211px;
+	height:53px;
+	background:url(../image/back_recruit_guide_navi_title.jpg) no-repeat;
+}
+
+#contents div.recruit_navi div.foot {margin-left:9px;}
+
+#contents div.recruit_navi div.title h3 {
+	margin:0px 3px 0px 5px;
+	padding:26px 6px 0px 20px;
+	font-size: 134%;
+	font-weight:bold;
+	color:#2B4A63;
+	background:url(../image/back_subtitle_work.gif) no-repeat;
+	background-position: left bottom;
+}
+
+
+/*　採用情報--トップ--仕事ガイドナビ　*/
+#contents ul.recruit_guide_navi_top {
+	margin-left:9px;
+	padding:12px 0px 0px 13px; 
+	background:url(../image/back_recruit_index_guide_navi.jpg);
+}
+
+#contents ul.recruit_guide_navi_top li img{
+	padding-bottom:3px;
+}
+
+#contents ul.recruit_guide_navi_top li {
+	float:left;
+	margin:0px 3px 3px 0px;
+	padding:5px;
+	list-style:none;
+	border:1px solid #C5C7B7;
+	background-color:#fff;
+	font-size:77%;
+}
+
+#contents ul.recruit_guide_navi_top li a:link,
+#contents ul.recruit_guide_navi_top li a:visited{display:block;}
+#contents ul.recruit_guide_navi_top li a:hover,
+#contents ul.recruit_guide_navi_top li a:active {
+	background:url(../image/y_btn_orange.gif) no-repeat;
+	display:block;
+	background-position: right bottom;
+}
+
+#contents ul.recruit_guide_navi_top li.staff_02,
+#contents ul.recruit_guide_navi_top li.staff_04,
+#contents ul.recruit_guide_navi_top li.staff_06 {margin-right:0px; margin-left:0px; clear:right;}
+
+#contents ul.recruit_guide_navi_top li img {clear:right; display:block;}
+
+
+
+/*　仕事ガイド--トップ　*/
+#contents dl.recruit_guide{
+	float:left;
+	display:block;
+	margin-bottom:6px;
+	padding:5px;
+	width:268px;
+	line-height:1.3;
+	border:1px solid #ccc;
+}
+
+#contents dl.recruit_guide dt {
+	font-weight:bold;
+}
+
+#contents dl.recruit_guide dt a,
+#contents dl.recruit_guide dt a:visited {display:block;}
+#contents dl.recruit_guide dt a:hover,
+#contents dl.recruit_guide dt a:active {
+	display:block;
+	background:url(../image/y_btn_orange.gif) no-repeat;
+	background-position: right top;
+}
+
+#contents dl.recruit_guide dd{
+	padding-top:6px;
+	line-height:1.3;
+}
+
+#contents dl.staff_01,
+#contents dl.staff_03,
+#contents dl.staff_05 {margin-right:6px;}
+
+
+#contents dl.recruit_guide img {
+	float:left;
+	margin:0px;
+	padding-right:6px;
+}
+
+
+
+
+
+/*　仕事ガイド--ナビ　*/
+#contents div.recruit_guide_navi {
+	margin-bottom:18px;
+	border:1px solid #ccc;
+	background-color:#F3F1EF;
+}
+#contents div.recruit_guide_navi ul {
+	width:97%;
+	margin:0px auto;
+	padding:3px 6px 10px 6px;
+}
+#contents div.recruit_guide_navi li {
+	float:left;
+	margin:0px 3px 0px 0px;
+	padding:3px;
+	list-style:none;
+	border:1px solid #C5C7B7;
+	background-color:#fff;
+	font-size:77%;
+}
+
+#contents div.recruit_guide_navi li a:link,
+#contents div.recruit_guide_navi li a:visited {display:block;}
+#contents div.recruit_guide_navi li a:hover,
+#contents div.recruit_guide_navi li a:active {
+	background:url(../image/y_btn_orange.gif) no-repeat;
+	display:block;
+	background-position: right bottom;
+}
+
+#contents div.recruit_guide_navi li.active {background:url(../image/back_staff_active.gif);}
+#contents div.recruit_guide_navi li.staff_06 {margin-right:0px;}
+
+#contents div.recruit_guide_navi li img {
+	clear:right;
+	display:block;
+	padding-bottom:3px;
+}
+
+
+
+
+
+/*　仕事ガイド--個人ページ　*/
+
+#contents .recruit_staff_head {
+	border-top:1px solid #C5C7B7;
+	border-bottom:1px solid #C5C7B7;
+	background:url(../image/back_staff_head.gif) ;
+}
+
+#contents .recruit_staff_head h3 {
+	float:right;
+	width:150px;
+	text-indent:12px;
+	text-align:center;
+	color:#F3E5C3;
+	/*color:#333333;*/
+	background:url(../image/back_staff_guide_02.gif) no-repeat;
+	background-position: right top;
+}
+
+#contents .recruit_staff_head h4 {
+	margin:30px 10px 0px 190px;
+	padding-bottom:12px;
+	line-height:1.7;
+	font-size:112%;
+	font-weight:bold;
+	color:#1E5581;
+}
+
+#contents .recruit_staff_head p.contents {
+	margin:0px 10px 0px 190px;
+	padding:4px 8px 2px 8px;
+	background:url(../image/back_staff_head_contents.gif);
+}
+
+#contents .recruit_staff_head p.foot {
+	margin:0px 10px 0px 190px;
+	padding:0px;
+	line-height:2px;
+	height:2px;
+	background:url(../image/back_staff_head_foot.gif) no-repeat;
+	background-position: left top;
+}
+
+
+#contents .recruit_staff_head span {
+	font-weight:bold;
+}
+
+#contents .recruit_staff_head img {
+	display:inline;
+	float:left;
+	margin-right: 4px;
+	padding:0px;
+}
+
+
+#contents .recruit_staff_contents {
+	padding-top:20px;
+}
+
+#contents .recruit_staff_contents a{
+	padding-left:17px;
+	background:url(../image/y_btn_orange.gif) no-repeat;
+	background-position: left center;
+}
+
+
+#contents div.recruit_staff_contents p{
+	margin-left:0px;
+	padding-bottom:13px;
+	text-indent:13px;
+}
+
+#contents div.recruit_staff_contents p.q{
+	clear:left;
+	text-indent:44px;
+	color:#545454;
+	font-weight:bold;
+	background:url(../image/back_staff_q.gif) no-repeat;
+	background-position: left top;
+}
+
+#contents div.recruit_staff_contents p.q strong {
+	/*color:#666;*/
+}
+
+
+#contents div.recruit_staff_contents img {
+	margin:5px 0px 5px 0px;
+	padding:5px;
+	border:1px solid #E6E6E5;
+	background:url(../image/back_staff_contents_img.gif) ;
+}
+
+#contents div.recruit_staff_contents img.center {clear:both;}
+#contents div.recruit_staff_contents img.left {clear:left; float:left; margin-right:8px;}
+#contents div.recruit_staff_contents img.right {clear:right; float:right; margin-left:8px;}
+
+
+
+
+
+#contents div.colleague {
+}
+
+#contents div.colleague img {
+	float:left;
+	margin:0px 8px 8px 0px;
+	padding:5px;
+	border:1px solid #E6E6E5;
+	background-color:#fff;
+}
+
+#contents div.colleague p.title {
+	margin-left:0px;
+	padding:0px 0px 0px 10px;
+	height:22px;
+	line-height:2.3;
+	vertical-align:middle;
+	font-weight:bold;
+	color:#394E39;
+	background:url(../image/back_colleague_title.gif)  no-repeat;
+	background-position: left top;
+}
+
+#contents div.colleague div {
+	padding:10px;
+	margin-bottom:24px;
+	background:url(../image/back_colleague_contents.gif);
+}
+
+#contents div.colleague div p {
+	clear:both;
+	margin:8px 0px 8px 0px;
+	padding:0px 0px 0px 3px;
+	background:url(../image/colleague_back_02.gif) ;
+	border-left:5px solid #fff;
+	border-right:5px solid #fff;
+	font-weight:bold;
+}
+
+
+
+
+/*　募集職種--選考フロー　*/
+#contents dl.selection{
+	margin-left:13px;
+}
+
+#contents dl.selection dt{
+	float:left;
+	clear:left;
+	margin-right:10px;
+}
+
+#contents dl.selection dd{
+	clear:right;
+	padding-top:5px;
+	height:60px;
+}
+
+
+
+/*　社風理解　*/
+#contents .tradition p{
+	clear:both;
+	display:block;
+	margin-left:20px;
+	padding-top:8px;
+}
+
+#contents .tradition img {
+	float:left;
+	clear:left;
+	display:block;
+	padding-left:20px;
+	width:240px;
+}
+
+
+/*　QandA　*/
+#contents .qanda dt{
+	padding:3px 0px 0px 24px;
+	font-size:112%;
+	font-weight:bold;
+	background:url(../image/back_subtitle_qanda.gif) no-repeat;
+	background-position: left bottom;
+}
+#contents .qanda dd{
+	margin-top:10px;
+	padding:0px 0px 24px 24px;
+	background:url(../image/icon_a.gif) no-repeat;
+	background-position: left top;
+}
+
+
+
+
+
+
+#contents div.message_area {
+	margin:30px auto;
+	text-align:center;
+}
+
+
+
+
+
+/*　メインでtable使用　*/
+table{
+width: 100%;
+}
+
+tbody{
+}
+
+th {
+width:26%;
+padding: 5px;
+font-weight:bold;
+background: #fff;
+border: 1px solid #E6E6E5;
+}
+
+td {
+padding: 5px;
+background: #fff;
+border: 1px solid #E6E6E5;
+}
+
+
+
+
+/*　サイドメニュー内要素　*/
+
+#sidenavi a:link    {color:#3C7BAB; text-decoration:underline;}
+#sidenavi a:visited {color:#5085AD; text-decoration:underline;}
+#sidenavi a:hover   {color:#6CABDB; text-decoration:underline;}
+#sidenavi a:active  {color:#043A68; text-decoration:none;}
+
+
+#sidenavi ul {
+	margin:0px 8px 16px 20px;
+	padding-bottom:8px;
+	line-height:1.4;
+}
+	
+#sidenavi li {
+	padding:2px 8px 2px 17px;
+	list-style:none;
+	background:url(../image/y_menu.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+#sidenavi li.active  a:link,
+#sidenavi li.active  a:visited
+{font-weight:bold; color:#2B4A63; text-decoration:none;}
+
+
+/*　footer内要素　*/
+#footer a:link    {text-decoration:none; color:#072A46;}
+#footer a:visited {text-decoration:none; color:#072A46;}
+#footer a:hover   {text-decoration:underline; color:#072A46;}
+#footer a:active  {text-decoration:none; color:#072A46;}
+
+#footer ul{
+	padding:9px 20px;
+	float:left;
+}
+#footer li{
+	display:inline;
+	height:15px;
+	line-height:1.6;
+	vertical-align:top;
+	margin-right:10px;
+	padding:2px 0px 2px 15px;
+	background:url(../image/y_btn_gray.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+#footer li.sitemap{
+	background:url(../image/y_btn_orange.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+#footer p.corporation{
+	clear:left;
+	float:left;
+	padding:0px 20px;
+}
+
+#footer p.group {
+	float:right;
+	padding:5px 10px;
+    color:#fff;
+	text-align:right;
+}

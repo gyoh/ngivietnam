@@ -1,0 +1,66 @@
+{% extends "base_sidenavi.html.vi" %}
+
+{% block title %}Dịch vụ{% endblock %}
+
+{% block pagetop %}<a name="top"></a>{% endblock %}
+
+{% block content %}
+			<h2>Dịch vụ ngi vietnam</h2>
+			<p>
+				Để tăng cường tính năng động của lĩnh vực đầu tư tại Việt Nam,
+				cùng với việc cung cấp các nguồn nguyên liệu cần thiết,
+				công ty ngivietnam còn hợp tác với các doanh nghiệp khác.
+				Dựa trên những kinh nghiệm và những thành quả chúng tôi
+				đã đạt được tại Nhật, lấy các doanh nghiệp mới có
+				vai trò nền tảng trong phát triển kinh tế Việt Nam làm đối tượng,
+				công ty triển khai dịch vụ khai thác, đầu tư và đổi mới thiết bị IT cơ sở,
+				phần mềm tiên tiến.
+			</p>
+			
+			<div class="box service">
+				<h3>Tư vấn đầu tư, kinh doanh</h3>
+				<p>
+					Chúng tôi thực hiện xuất vốn tín dụng thông qua quỹ hoặc
+					thanh toán cá nhân, và đứng từ quan điểm của người làm kinh doanh
+					để thúc đẩy kinh doanh. Trưởng thành từ những khó khăn và mạo hiểm.
+					Đó chính là phương châm hoạt động đầu tư lý tưởng của chúng tôi.
+					Ngoài ra, thông qua triển khai hệ thống EIR và business plan contest,
+					chúng tôi muốn cống hiến cho sự nghiệp tìm kiếm và đào tạo các nhà
+					doanh nghiệp tài ba.
+				</p>
+			</div>
+			
+			<div class="box service">
+				<h3>Incubation</h3>
+				<p>
+					Chúng tôi nguyện góp sức giúp đỡ để tạo ra một môi trường thuận lợi
+					cho các nhà khởi nghiệp Việt Nam, và thúc đẩy hoạt động doanh nghiệp
+					một cách thuận tiện.Chúng tôi không chỉ giúp đỡ những người đang mở
+					công ty, mà còn giúp đỡ những người có ý định lập doanh nghiệp,
+					những người quan tâm đến lĩnh vực đầu tư, bất kể người đó là sinh viên
+					hay người đang đi làm.
+				</p>
+			</div>
+	
+			<div class="box service">
+				<h3>Khai thác Offshore</h3>
+				<p>
+					Chúng tôi không chỉ tiến hành khai thác với giá rẻ,
+					mà còn cung cấp dịch vụ khai thác có chất lượng tốt,
+					và tính mở rộng cao. Trên cơ sở lấy phương thức khai thác nhanh chóng,
+					độc lập làm nền tảng, chúng tôi lựa chọn những đối tác phù hợp
+					với lĩnh vực đầu tư, và cung cấp dịch vụ khai thác.
+					Đồng thời chúng tôi cũng triển khai hỗ trợ các nghiệp vụ khác
+					như nghiệp vụ kỹ sư cầu nối, điều chỉnh specs, mở rộng release,
+					và duy trì các hoạt động này phát triển một cách liên tục.
+				</p>
+			</div>
+			<p class="right"><span class="in_link"><a href="#top">Top</a></span></p>
+{% endblock %}
+
+{% block sidenavi %}
+		<ul>
+			<li class="active"><a href="/vi/service">Dịch vụ</a></li>
+			<li><a href="/vi/service/contact">Địa chỉ liên lạc</a></li>
+		</ul>
+{% endblock %}

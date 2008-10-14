@@ -1,0 +1,48 @@
+{% extends "base_sidenavi.html.ja" %}
+
+{% block title %}サービス&nbsp;&gt;&nbsp;ご相談・お問合わせ{% endblock %}
+
+{% block content %}
+			<h2>ビジネスに関するご相談・お問合わせ</h2>
+			<p>
+				ビジネスに関するご相談・お問合わせは下記フォームにてお問い合わせください。<br />
+				折り返し、担当者からご連絡させて頂きます。
+			</p>
+			
+            <form class="contact" action="/ja/service/contact/confirmemail" method="post">
+                <table>
+                    <tr>
+                        <th>Email:&nbsp;</th>
+                        <td>
+                            <input class="text" name="email" type="text" size="30" value="{{ request.params.email }}" />
+                            <font color='red'>{{ error }}</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>件名:&nbsp;</th>
+                        <td>
+                            <input class="text" name="subject" type="text" size="30" value="{{ request.params.subject }}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>内容:&nbsp;</th>
+                        <td>
+                            <textarea name="body" rows="5" cols="50">{{ request.params.body }}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input class="button" type="submit" value="Submit"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+{% endblock %}
+
+{% block sidenavi %}
+		<ul>
+			<li><a href="/ja/service">サービス内容</a></li>
+			<li class="active"><a href="/ja/service/contact">ご相談・お問合せ</a></li>
+		</ul>
+{% endblock %}

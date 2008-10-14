@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Admin &gt; jobs</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Author" content="Gyo Hamammoto" />
+    <meta name="Copyright" content="ngi vietnam" />
+</head>
+<body>
+    <form action="/admin/jobs" method="post">
+        <table>
+            <tr>
+                <td class="name">
+                    <span class="field_name">title</span>
+                    <span class="field_type">(string)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="string" name="title" type="text" size="50" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">unit</span>
+                    <span class="field_type">(string)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="string" name="unit" type="text" size="50" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">location</span>
+                    <span class="field_type">(string)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="string" name="location" type="text" size="50" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">posted</span>
+                    <span class="field_type">(datetime)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="datetime" name="posted" type="text" size="30" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">responsibilities</span>
+                    <span class="field_type">(Text)</span>
+                </td>
+                <td class="value"><div style="position: relative"><textarea name="responsibilities" rows="5" cols="50"></textarea></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">qualifications</span>
+                    <span class="field_type">(Text)</span>
+                </td>
+                <td class="value"><div style="position: relative"><textarea name="qualifications" rows="5" cols="50"></textarea></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">desired</span>
+                    <span class="field_type">(Text)</span>
+                </td>
+                <td class="value"><div style="position: relative"><textarea name="desired" rows="5" cols="50"></textarea></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">salary</span>
+                    <span class="field_type">(string)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="string" name="salary" type="text" size="50" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">general</span>
+                    <span class="field_type">(Text)</span>
+                </td>
+                <td class="value"><div style="position: relative"><textarea name="general" rows="5" cols="50"></textarea></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">language</span>
+                    <span class="field_type">(string)</span>
+                </td>
+                <td class="value">
+                    <div style="position: relative">
+                        <select class="bool" name="language">
+                            <option selected value='en'>English</option>
+                            <option value='ja'>Japanese</option>
+                            <option value='vi'>Vietnamese</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">public</span>
+                    <span class="field_type">(bool)</span>
+                </td>
+                <td class="value">
+                    <div style="position: relative">
+                        <select class="bool" name="public">
+                            <option selected value='0'>False</option>
+                            <option value='1'>True</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="buttons">
+                    <input type="submit" value="Save Changes"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+	{% for job in jobs %}
+	<!--{{ job.title }}-->
+	<a name="{{ job.key }}"></a>
+	<div class="box recruit">
+		<h3>{{ job.title }}</h3>
+		<div class="recruit">
+			<table>
+				<tr>
+					<th>Business Unit</th>
+					<td>{{ job.unit }}</td>
+				</tr>
+				<tr>
+					<th>Location</th>
+					<td>{{ job.location }}</td>
+				</tr>
+				<tr>
+					<th>Posted</th>
+					<td>{{ job.posted }}</td>
+				</tr>
+				<tr>
+					<th>Responsibilities</th>
+					<td>
+					    {{ job.responsibilities }}
+					</td>
+				</tr>
+				<tr>
+					<th>Qualifications</th>
+					<td>
+					    {{ job.qualifications }}
+					</td>
+				</tr>
+				<tr>
+					<th>Desired</th>
+					<td>
+				        {{ job.desired }}
+					</td>
+				</tr>
+				<tr>
+					<th>Salary</th>
+					<td>{{ job.salary }}</td>
+				</tr>
+				<tr>
+					<th>General</th>
+					<td>
+					    {{ job.general }}
+					</td>
+				</tr>
+				<tr>
+					<th>Language</th>
+					<td>{{ job.language }}</td>
+				</tr>
+				<tr>
+					<th>Public</th>
+					<td>
+					    {{ job.public }}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!--//{{ job.title }}-->
+	{% endfor %}
+</body>
+</html>

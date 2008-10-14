@@ -1,0 +1,22 @@
+{% extends "base.html.ja" %}
+
+{% block title %}サイトマップ{% endblock %}
+
+{% block content %}
+			<h2>サイトマップ</h2>
+			<div class="sitemap">
+				<dl>
+					<dt><a href="/ja/">ホーム</a></dt>
+					<dt>サービス</dt>
+					<dd>[ <a href="/ja/service">サービス内容</a> | <a href="/ja/service/contact">お問い合わせ</a> ]</dd>
+					<dt>プレスルーム</dt>
+					<dd>[ <a href="/ja/press">新着情報</a> ]</dd>
+					<dt>会社情報</dt>
+					<dd>[ <a href="/ja/company">会社概要</a> | <a href="/ja/company/mission">ミッション</a> | <a href="/ja/company/business">事業内容</a> ]
+					<dt>採用情報</dt>
+					<dd>[ <a href="/ja/recruit">募集職種</a> | <a href="/ja/recruit/contact">お問い合わせ</a> ]</dd>
+					<dt class="out_link"><a href="http://www.ngigroup.com/jp/contact/index.html" target="_blank">お問い合わせ</a></dt>
+					<dt class="out_link"><a href="http://www.ngigroup.com/jp/privacy/index.html" target="_blank">個人情報保護方針</a></dt>
+				</dl>
+			</div>
+{% endblock %}

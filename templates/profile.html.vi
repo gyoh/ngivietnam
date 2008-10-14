@@ -1,0 +1,59 @@
+{% extends "base_sidenavi.html.vi" %}
+
+{% block title %}Giới thiệu về công ty{% endblock %}
+
+{% block content %}
+			<h2>Giới thiệu về công ty</h2>
+			<div class="company_info">
+				<table summary="company_info">
+					<tr>
+						<th>Thương hiệu</th>
+						<td>ngi vietnam Co., Ltd.</td>
+					</tr>
+					<tr>
+						<th>Bộ máy tổ chức</th>
+						<td>
+						    Chủ tịch tập đoàn:　Satoshi Koike<br /> 
+							Chủ tịch hội đồng quản trị kiêm<br /> chủ tịch ban chấp hành:　Satoshi Sekine<br />
+							Phó chủ tịch hội đồng quản trị kiêm<br /> trưởng bộ phận kỹ thuật:　Gyo Hamamoto<br />
+							Cố vấn:　Iwao Matsuda<br />
+							Cố vấn:　Chu Tuấn Cáp<br />
+							Cố vấn:　Vũ Tiến Lộc<br />
+						</td>
+					</tr>
+					<tr>
+						<th>Địa chỉ văn phòng</th>
+						<td>
+							Tòa nhà Thành Đông, 132-138 Kim Mã, Quận Ba Đình, Hà Nội, Việt Nam<br />
+							（ SĐT ）84-4-734-7632<br />
+							（ FAX ）84-4-734-7633
+						</td>
+					</tr>
+					<tr>
+						<th>Ngày thành lập</th>
+						<td>Ngày 12 tháng 9 năm 2008</td>
+					</tr>
+					<tr>
+						<th>Tiền vốn</th>
+						<td>800.000 đô la Mỹ</td>
+					</tr>
+					<tr>
+						<th>Nội dung hoạt động</th>
+						<td>Lĩnh vực đầu tư<br />
+						    Incubation (Khai thác các lĩnh vực, khai thác kĩ thuật)</td>
+					</tr>
+					<tr>
+						<th>Cổ đông</th>
+						<td>Công ty cổ phần ngi group (100% vốn)</td>
+					</tr>
+				</table>
+			</div>
+{% endblock %}
+
+{% block sidenavi %}
+            <ul>
+	            <li class="active"><a href="/vi/company">Giới thiệu</a></li>
+	            <li><a href="/vi/company/mission">Sứ mệnh</a></li>
+	            <li><a href="/vi/company/business">Hoạt động</a></li>
+            </ul>
+{% endblock %}

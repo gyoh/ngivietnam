@@ -1,0 +1,8 @@
+{% extends "jobs_contact.html.ja" %}
+
+{% block content %}
+			<h2>採用に関するご相談・お問合わせ</h2>
+			<p>
+				ngi vietnamにメッセージが送信されました。折り返し、担当者からご連絡させて頂きます。
+			</p>
+{% endblock %}

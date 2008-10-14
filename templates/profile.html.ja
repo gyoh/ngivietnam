@@ -1,0 +1,58 @@
+{% extends "base_sidenavi.html.ja" %}
+
+{% block title %}会社概要{% endblock %}
+
+{% block content %}
+			<h2>会社概要</h2>
+			<div class="company_info">
+				<table summary="company_info">
+					<tr>
+						<th>商号</th>
+						<td>ngi vietnam Co., Ltd.</td>
+					</tr>
+					<tr>
+						<th>役員</th>
+						<td>
+						    会長Chairman:　小池 聡<br /> 
+							代表取締役社長兼CEO:　関根 智<br />
+							取締役副社長兼CTO:　濱本 暁<br />
+							顧問:　松田 岩夫<br />
+							顧問:　Chu Tuan Cap<br />
+							顧問:　Vu Tien Loc<br />
+						</td>
+					</tr>
+					<tr>
+						<th>本社所在地</th>
+						<td>
+							205 Thanh Dong Building, 132-138 Kim Ma St., Ba Dinh Dist., Ha Noi, Vietnam<br />
+							（ TEL ）84-4-734-7632<br />
+							（ FAX ）84-4-734-7633
+						</td>
+					</tr>
+					<tr>
+						<th>設立</th>
+						<td>2008年9月12日</td>
+					</tr>
+					<tr>
+						<th>資本金</th>
+						<td>800,000 USD</td>
+					</tr>
+					<tr>
+						<th>事業内容</th>
+						<td>投資事業<br />インキュベーション事業（事業開発、技術開発）</td>
+					</tr>
+					<tr>
+						<th>株主</th>
+						<td>ngi group株式会社 (100%)</td>
+					</tr>
+				</table>
+			</div>
+{% endblock %}
+
+{% block sidenavi %}
+            <ul>
+	            <li class="active"><a href="/ja/company">会社概要</a></li>
+	            <li><a href="/ja/company/mission">ミッション</a></li>
+	            <li><a href="/ja/company/business">事業内容</a></li>
+            </ul>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "services_contact.html.vi" %}
+
+{% block content %}
+			<h2>Địa chỉ liên lạc</h2>
+			<p>
+				Thư của bạn đã được gửi đến ngivietnam. Phía công ty chúng tôi sẽ liên lạc lại cho bạn trong thời gian sớm nhất.
+			</p>
+{% endblock %}

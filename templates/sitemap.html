@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Site Map{% endblock %}
+
+{% block content %}
+			<h2>Site Map</h2>
+			<div class="sitemap">
+				<dl>
+					<dt><a href="/">Home</a></dt>
+					<dt>Services</dt>
+					<dd>[ <a href="/service">Services</a> | <a href="/service/contact">Contact Us</a> ]</dd>
+					<dt>Press Room</dt>
+					<dd>[ <a href="/press">Latest News</a> ]</dd>
+					<dt>About Us</dt>
+					<dd>[ <a href="/company">Corporate Data</a> | <a href="/company/mission">Our Mission</a> | <a href="/company/business">Our Business</a> ]</dd>
+					<dt>Jobs</dt>
+					<dd>[ <a href="/recruit">Jobs</a> | <a href="/recruit/contact">Contact Us</a> ]</dd>
+					<dt class="out_link"><a href="http://www.ngigroup.com/jp/contact/index.html" target="_blank">Contatc Us</a></dt>
+					<dt class="out_link"><a href="http://www.ngigroup.com/jp/privacy/index.html" target="_blank">Privacy Policy</a></dt>
+				</dl>
+			</div>
+{% endblock %}

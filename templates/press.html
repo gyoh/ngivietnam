@@ -1,0 +1,25 @@
+{% extends "base_sidenavi.html" %}
+
+{% block title %}Press Room{% endblock %}
+
+{% block content %}
+	        <h2>Press Room</h2>
+	        <div class="box pressroom">
+		        <p>Press room introduces the latest news and press releases of ngi vietnam with regard to our involvement in various business in Vietnam. Please note that clicking on some news will redirect you to ngi group's website.</p>
+		        <h3>Latest News</h3>
+		        {% ifequal newscount 0 %}
+		            <p>There are currently no news at ngi vietnam.</p>
+		        {% endifequal %}
+		        <dl>
+                    {% for news in newslist %}
+                        <dt>{{ news.posted }}</dt><dd>{% if news.link %}<a href="{{ news.link }}" target="_blank">{% endif %}{{ news.title }}{% if news.link %}</a>{% endif %}</dd>
+                    {% endfor %}
+		        </dl>
+	        </div>
+{% endblock %}
+
+{% block sidenavi %}
+		<ul>
+			<li class="active"><a href="/press">Press Room</a></li>
+		</ul>
+{% endblock %}

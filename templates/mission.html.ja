@@ -1,0 +1,32 @@
+{% extends "base_sidenavi.html.ja" %}
+
+{% block title %}会社概要&nbsp;&gt;&nbsp;ミッション{% endblock %}
+
+{% block content %}
+			<h2>ミッション</h2>
+			<div class="box">
+				<h3>Vietnamese Market Accelerator</h3>
+				<p>
+                    我々は、Next Generation Innovatorの名の下に、ベトナム社会の次の時代を築く礎として、新興市場を活性化し、起業家精神を醸成します。
+                </p>
+                <h3>Asian Ventures Networking Hub</h3>
+                <p>
+                    日本とベトナムの懸け橋を皮切りに、アジア全体のGlobal Venture Networkを形成します。
+				</p>
+			</div>
+			<h2>活動ポリシー</h2>
+			<div class="box">
+				<h3>Collaboration Partner</h3>
+				<p>
+                    投資・インキュベーション対象の企業と共に、一人称の立場で悩み、成長する仲間として行動します
+                </p>
+			</div>
+{% endblock %}
+
+{% block sidenavi %}
+            <ul>
+	            <li><a href="/ja/company">会社概要</a></li>
+	            <li class="active"><a href="/ja/company/mission">ミッション</a></li>
+	            <li><a href="/ja/company/business">事業内容</a></li>
+            </ul>
+{% endblock %}

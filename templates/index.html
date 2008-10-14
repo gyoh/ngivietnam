@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2 class="top">ngi vietnam<br />brings "Next Generation Innovation" to the Vietnam venture market</h2>
+<!--
+<div class="top_service">
+		<div class="index">
+			<a href="./service/index.html">
+				<img src="./image/sp.gif" width="210" height="15" alt="豊富なサービス" />
+				新規技術開発からインフラ支援まで、ニーズに沿ったチーム構成でビジネスをサポート
+			</a>
+		</div>
+		
+		<div class="work">
+			<a href="./service/work.html">
+				<img src="./image/sp.gif" width="210" height="15" alt="幅広い開発実績" />
+				企業向けからコンシューマー向けまで、ビジネスプランに応じたインキュベーションの実績
+			</a>
+		</div>
+	
+		<div class="methodology">
+			<a href="./service/methodology.html">
+				<img src="./image/sp.gif" width="210" height="15" alt="独自の開発スタイル" />
+				経験に基づいた開発手法や取組みで、高品質なサービスをスピーディに低コストで開発
+			</a>
+		</div>
+</div>
+-->
+<div class="box top_news">
+	<h3>Latest News</h3>
+    {% ifequal newscount 0 %}
+        <p>There are currently no news at ngi vietnam.</p>
+    {% endifequal %}
+	<dl>
+	    {% for news in newslist %}
+	        <dt>{{ news.posted }}</dt><dd>{% if news.link %}<a href="{{ news.link }}" target="_blank">{% endif %}{{ news.title }}{% if news.link %}</a>{% endif %}</dd>
+        {% endfor %}
+	</dl>
+</div>
+{% endblock %}

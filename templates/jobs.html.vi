@@ -1,0 +1,144 @@
+{% extends "base_sidenavi.html.vi" %}
+
+{% block title %}Thông tin tuyển dụng{% endblock %}
+
+{% block pagetop %}<a name="top"></a>{% endblock %}
+
+{% block content %}
+			<h2>Tuyển dụng</h2>
+			<div class="box">
+			    {% ifequal jobcount 0 %}
+			    <p>Hiện tại công ty ngivietnam chưa tiến hành tuyển dụng thêm.</p>
+			    {% endifequal %}
+				<ul>
+    				{% for job in jobs %}
+    				    <li><a href="#{{ job.key }}">{{ job.title }}</a></li>
+    				{% endfor %}
+					<li class="list2"><a href="#senkou">Trình tự tuyển chọn</a></li>
+					<li class="list2"><a href="#oubo">Phương pháp tuyển chọn</a></li>
+				</ul>
+				<p></p>
+			</div>
+			
+			<!--選考フロー-->
+			<a name="senkou"></a>
+			<div class="box">
+				<h3>Trình tự tuyển chọn</h3>
+			    <ol class="selection">
+				    <li><strong>Tuyển chọn hồ sơ</strong><br />
+				        Trưởng các bộ phận sẽ tiến hành xác nhận hồ sơ ứng tuyển, và tiến hành lựa chọn.
+                        Về cơ bản việc lựa chọn hồ sơ sẽ được tiến hành nhanh chóng,
+                        tuy nhiên cũng có trường hợp mất 1 đến 2 tuần để lựa chọn.<br /><br />
+				    </li>
+				    <li><strong>Phỏng vấn lần một</strong><br />
+				        Những người đã qua vòng tuyển chọn hồ sơ sẽ được trưởng bộ phận phỏng vấn lần 1.<br /><br />
+				    </li>
+				    <li><strong>Phỏng vấn lần 2</strong><br />
+				        Những người đã qua vòng phỏng vấn lần 1 sẽ được phỏng vấn lần 2.
+                        Trong trường hợp cần thiết có thể tiến hành phỏng vấn nhiều lần.<br /><br />
+				    </li>
+				    <li><strong>Thông báo tuyển dụng</strong><br />
+				        Những người đã qua được vòng phỏng vấn lần 2 sẽ nhận được thông báo mời đi làm.<br /><br />
+				    </li>
+				    <li><strong>Vào làm</strong><br />
+				        Thời gian vào làm sẽ được thống nhất giữa 2 bên.<br /><br />
+				    </li>
+				</ol>
+			</div>
+			<p class="right"><span class="in_link"><a href="#top">Top</a></span></p>
+			<!--//選考フロー-->
+			
+			<!--応募方法-->
+			<a name="oubo"></a>
+			<div class="box">
+				<h3>Phương pháp tuyển chọn</h3>
+				<p>
+					Nội dung ứng tuyển được ghi trong phần <a href="/vi/recruit/contact">địa chỉ liên lạc về nội dung tuyển dụng</a>.
+					Sau khi xác nhận nội dung tuyển dụng của công việc,
+					các bạn hãy điền các thông tin cần thiết vào mẫu đó và nhấn vào phần gửi.
+					Bên công ty chúng tôi sẽ liên lạc lại cho bạn về địa chỉ để gửi
+					CV và lí lịch cá nhân.<br /><br />
+					Ngoài ra, khi ứng tuyển các bạn hãy trình bày rõ các nội dung dưới đây.
+					<ul>
+						<li class="method">Họ tên đầy đủ của bạn.</li>
+						<li class="method">Nghề bạn muốn ứng tuyển.</li>
+						<li class="method">Lí do ứng tuyển.</li>
+						<li class="method">Bạn sẽ cống hiến như thế nào cho công ty chúng tôi.</li>
+						<li class="method">Ngày tháng bạn có thể bắt đầu làm việc tại công ty.</li>
+					</ul>
+				</p>
+				<p class="right"><span class="in_link"><a href="/vi/recruit/contact">địa chỉ liên lạc về nội dung tuyển dụng</a></span></p>
+				<p>
+					Chúng tôi tuyệt đối bảo mật những thông tin ứng tuyển.
+					Trong vòng 1~2 tuần sau khi nhận hồ sơ ứng tuyển,
+					chúng tôi sẽ thông báo về kết quả tuyển chọn hồ sơ tới các bạn thông
+					qua một trong các hình thức sau đây: email, điện thoại hoặc đường bưu điện.
+					Hồ sơ ứng tuyển sẽ không được trả lại. Ngoài ra,
+					do khó có thể trả lời những câu hỏi về lí do của kết quả lựa chọn hồ
+					sơ nên rất mong các bạn thông cảm cho.
+				</p>
+			</div>
+			<p class="right"><span class="in_link"><a href="#top">Top</a></span></p>
+			<!--//応募方法ー-->
+			
+			{% for job in jobs %}
+			<!--{{ job.title }}-->
+			<a name="{{ job.key }}"></a>
+			<div class="box recruit">
+				<h3>{{ job.title }}</h3>
+				<div class="recruit_recruit">
+					<table>
+						<tr>
+							<th>Ban ngành thực thuộc</th>
+							<td>{{ job.unit }}</td>
+						</tr>
+						<tr>
+							<th>Nơi làm việc</th>
+							<td>{{ job.location }}</td>
+						</tr>
+						<tr>
+							<th>Ngày ứng tuyển</th>
+							<td>{{ job.posted }}</td>
+						</tr>
+						<tr>
+							<th>nội dung công việc</th>
+							<td>
+							    {{ job.responsibilities }}
+							</td>
+						</tr>
+						<tr>
+							<th>Yêu cầu ứng tuyển</th>
+							<td>
+							    {{ job.qualifications }}
+							</td>
+						</tr>
+						<tr>
+							<th>Các kĩ năng được ưu tiên・kinh nghiệm làm việc</th>
+							<td>
+						        {{ job.desired }}
+							</td>
+						</tr>
+						<tr>
+							<th>Lương bổng</th>
+							<td>{{ job.salary }}</td>
+						</tr>
+						<tr>
+							<th>Thông tin khác</th>
+							<td>
+							    {{ job.general }}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<p class="right"><span class="in_link"><a href="#top">Top</a></span></p>
+			<!--//{{ job.title }}-->
+			{% endfor %}
+{% endblock %}
+
+{% block sidenavi %}
+		<ul>
+			<li class="active"><a href="/vi/recruit">Tuyển dụng</a></li>
+			<li><a href="/vi/recruit/contact">Địa chỉ liên lạc</a></li>
+		</ul>
+{% endblock %}

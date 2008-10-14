@@ -1,0 +1,9 @@
+{% extends "base.html.vi" %}
+
+{% block title %}Lỗi hệ thống.{% endblock %}
+
+{% block content %}
+			<div class="message_area">
+				Lỗi hệ thống.
+			</div>
+{% endblock %}

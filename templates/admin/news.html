@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Admin &gt; News</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Author" content="Gyo Hamammoto" />
+    <meta name="Copyright" content="ngi vietnam" />
+</head>
+<body>
+    <form action="/admin/news" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td class="name">
+                    <span class="field_name">title</span>
+                    <span class="field_type">(string)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="string" name="title" type="text" size="50" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">content</span>
+                    <span class="field_type">(Text)</span>
+                </td>
+                <td class="value"><div style="position: relative"><textarea name="content" rows="5" cols="50"></textarea></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">posted</span>
+                    <span class="field_type">(datetime)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="datetime" name="posted" type="text" size="30" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">link</span>
+                    <span class="field_type">(URL)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="None" name="link" type="text" size="30" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">tags</span>
+                    <span class="field_type">(string)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="string" name="tags" type="text" size="50" value=""/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">image</span>
+                    <span class="field_type">(file)</span>
+                </td>
+                <td class="value"><div style="position: relative"><input class="None" name="image" type="file" size="30"/></div></td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">language</span>
+                    <span class="field_type">(string)</span>
+                </td>
+                <td class="value">
+                    <div style="position: relative">
+                        <select class="bool" name="language">
+                            <option selected value='en'>English</option>
+                            <option value='ja'>Japanese</option>
+                            <option value='vi'>Vietnamese</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="name">
+                    <span class="field_name">public</span>
+                    <span class="field_type">(bool)</span>
+                </td>
+                <td class="value">
+                    <div style="position: relative">
+                        <select class="bool" name="public">
+                            <option selected value='0'>False</option>
+                            <option value='1'>True</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="buttons">
+                    <input type="submit" value="Save Changes"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+	{% for news in newslist %}
+	<!--{{ news.title }}-->
+	<a name="{{ news.key }}"></a>
+	<div class="box recruit">
+		<h3>{{ news.title }}</h3>
+		<div class="press">
+			<table>
+				<tr>
+					<th>Content</th>
+					<td>{{ news.content }}</td>
+				</tr>
+				<tr>
+					<th>Posted</th>
+					<td>{{ news.posted }}</td>
+				</tr>
+				<tr>
+					<th>Link</th>
+					<td>
+					    {{ news.link }}
+					</td>
+				</tr>
+				<tr>
+					<th>Tags</th>
+					<td>
+					    {% for tag in news.tags %}
+					    {{ news.tag }},&nbsp;
+					    {% endfor %}
+					</td>
+				</tr>
+				<!--
+				<tr>
+					<th>Image</th>
+					<td>
+				        {{ news.image }}
+					</td>
+				</tr>
+			    -->
+				<tr>
+					<th>Language</th>
+					<td>{{ news.language }}</td>
+				</tr>
+				<tr>
+					<th>Public</th>
+					<td>
+					    {{ news.public }}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!--//{{ news.title }}-->
+	{% endfor %}
+</body>
+</html>

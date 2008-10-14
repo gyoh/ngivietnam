@@ -1,0 +1,60 @@
+{% extends "base_sidenavi.html.ja" %}
+
+{% block title %}プレスルーム{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+<script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/ext/ext-all.js"></script>
+<script type="text/javascript">
+    Ext.onReady(function(){
+    	{% for news in newslist %}
+    	    {% if news.content %}
+                new Ext.ToolTip({
+                    target: '{{ news.key }}',
+                    html: '<div align="left">{{ news.content|linebreaks }}</div>',
+                    width: 400,
+                    trackMouse: true
+                });
+            {% endif %}
+        {% endfor %}
+        Ext.QuickTips.init();
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+			<h2>プレスルーム</h2>
+			<div class="box pressroom">
+				<p>プレスルームでは、ngi vietnamが携わったビジネス案件等に関するプレスリリースや最新情報をご紹介します。<br />※一部、ngi groupのWebサイトにリンクします。</p>
+				<h3>新着情報</h3>
+			    {% ifequal newscount 0 %}
+			        <p>現在新着情報はありません。</p>
+			    {% endifequal %}
+				<dl>
+            	    {% for news in newslist %}
+            	        <dt>{{ news.posted }}</dt><dd id="{{ news.key }}">{% if news.link %}<a href="{{ news.link }}" target="_blank">{% endif %}{{ news.title }}{% if news.link %}</a>{% endif %}</dd>
+                    {% endfor %}
+				</dl>
+			</div>
+
+    		<div class="box pressroom">
+		        <h3>新着ブログエントリー</h3>
+		        {% ifequal entrycount 0 %}
+		            <p>現在新着ブログエントリーはありません。</p>
+		        {% endifequal %}
+		        <dl>
+                    {% for entry in entries %}
+                        <dt>{{ entry.updated }}</dt>
+                        <dd><a href="{{ entry.link }}" target="_blank">{{ entry.title }}</a></dd>
+                    {% endfor %}
+		        </dl>
+		        <p class="right"><span class="out_link"><a href="http://blog.ngivietnam.com/" target="_blank">ngi vietnam blog</a></span></p>
+			</div>
+{% endblock %}
+
+{% block sidenavi %}
+		<ul>
+			<li class="active"><a href="/ja/press">プレスルームTOP</a></li>
+		</ul>
+{% endblock %}

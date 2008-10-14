@@ -1,0 +1,46 @@
+{% extends "base_sidenavi.html.vi" %}
+
+{% block title %}Phòng báo{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+<script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/ext/ext-all.js"></script>
+<script type="text/javascript">
+    Ext.onReady(function(){
+    	{% for news in newslist %}
+    	    {% if news.content %}
+                new Ext.ToolTip({
+                    target: '{{ news.key }}',
+                    html: '<div align="left">{{ news.content|linebreaks }}</div>',
+                    width: 400,
+                    trackMouse: true
+                });
+            {% endif %}
+        {% endfor %}
+        Ext.QuickTips.init();
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+			<h2>Phòng báo</h2>
+			<div class="box pressroom">
+				<p>Tại press room này chúng tôi sẽ giới thiệu các thông tin mới nhất về các dự án mà ngivietnam tham gia.<br />※ Một phần của press room sẽ link với website của ngi group.</p>
+				<h3>Tin mới nhất</h3>
+			    {% ifequal newscount 0 %}
+			        <p>Hiện tại chưa có thông tin mới nào khác.</p>
+			    {% endifequal %}
+				<dl>
+            	    {% for news in newslist %}
+            	        <dt>{{ news.posted }}</dt><dd id="{{ news.key }}">{% if news.link %}<a href="{{ news.link }}" target="_blank">{% endif %}{{ news.title }}{% if news.link %}</a>{% endif %}</dd>
+                    {% endfor %}
+				</dl>
+			</div>
+{% endblock %}
+
+{% block sidenavi %}
+		<ul>
+			<li class="active"><a href="/vi/press">Phòng báo TOP</a></li>
+		</ul>
+{% endblock %}

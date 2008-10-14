@@ -1,0 +1,9 @@
+{% extends "base.html.ja" %}
+
+{% block title %}システムエラーが発生しました。{% endblock %}
+
+{% block content %}
+			<div class="message_area">
+				システムエラーが発生しました。
+			</div>
+{% endblock %}

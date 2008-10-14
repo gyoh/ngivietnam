@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block globalnavi %}
+		<ul>
+			<li class="home"><a href="/ja/" id="home">ホーム</a></li>
+			<li class="service"><a href="/ja/service" id="service">サービス</a></li>
+			<li class="press"><a href="/ja/press" id="press">プレスルーム</a></li>
+			<li class="company"><a href="/ja/company" id="company">会社情報</a></li>
+			<li class="recruit"><a href="/ja/recruit" id="recruit">採用情報</a></li>
+		</ul>
+{% endblock %}
+
+{% block footer %}
+		<ul>
+			<li class="sitemap"><a href="/ja/sitemap">サイトマップ</a></li>
+			<li><a href="http://www.ngigroup.com/jp/privacy/index.html" target="_blank">個人情報保護方針</a></li>
+			<li><a href="http://www.ngigroup.com/jp/contact/index.html" target="_blank">お問い合わせ</a></li>
+		</ul>
+{% endblock %}

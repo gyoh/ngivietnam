@@ -1,0 +1,32 @@
+{% extends "base_sidenavi.html.vi" %}
+
+{% block title %}Giới thiệu về công ty&nbsp;&gt;&nbsp;Nội dung hoạt động{% endblock %}
+
+{% block content %}
+			<h2>Nội dung hoạt động</h2>
+			<div class="box">
+				<h3>Lĩnh vực đầu tư</h3>
+				<p>
+					Chúng tôi dự định là năm 2009 sẽ huy động được quỹ vốn đầu tư là 25 triệu USD.
+					Mở rộng các doanh nghiệp do sinh viên sáng lập, đầu tư, thị trường OTC,
+					các doanh nghiệp lên sàn, các doanh nghiệp mới.
+				</p>
+				<h3>Professional incubation service</h3>
+				<p>
+					Cùng với sự phát triển của thị trường Việt Nam,
+					chúng tôi tiến hành tìm kiếm cơ hội đầu tư, và triển khai hoạt động
+					professional incubation service nhờ vào nguồn nhân lực giàu kinh nghiệm
+					về các lĩnh vực như cung cấp vốn, hỗ trợ kinh doanh, khai thác kỹ thuật.
+				</p>
+				
+				<p class="right last"><span class="in_link">Nội dung cụ thể xin mời các bạn tham khảo tại phần <a href="/vi/service">nội dung service</a>.</span></p>
+			</div>
+{% endblock %}
+
+{% block sidenavi %}
+            <ul>
+	            <li><a href="/vi/company">Giới thiệu</a></li>
+	            <li><a href="/vi/company/mission">Sứ mệnh</a></li>
+	            <li class="active"><a href="/vi/company/business">Hoạt động</a></li>
+            </ul>
+{% endblock %}

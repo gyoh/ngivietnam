@@ -1,0 +1,138 @@
+{% extends "base_sidenavi.html" %}
+
+{% block title %}Jobs{% endblock %}
+
+{% block pagetop %}<a name="top"></a>{% endblock %}
+
+{% block content %}
+			<h2>Job Openings</h2>
+			<div class="box">
+			    {% ifequal jobcount 0 %}
+			    <p>There are currently no open job opportunities at ngi vietnam.</p>
+			    {% endifequal %}
+				<ul>
+				    {% for job in jobs %}
+				    <li><a href="#{{ job.key }}">{{ job.title }}</a></li>
+				    {% endfor %}
+					<li class="list2"><a href="#senkou">Selection Process</a></li>
+					<li class="list2"><a href="#oubo">Application</a></li>
+				</ul>
+				<p></p>
+			</div>
+			
+			<!--選考フロー-->
+			<a name="senkou"></a>
+			<div class="box">
+				<h3>Selection Process</h3>
+			    <ol class="selection">
+				    <li><strong>Documentary Screening</strong><br />
+				        We carefully go through each application and offer selected applicants an interview.
+				        It may take one to two weeks to notify the result.<br /><br />
+				    </li>
+				    <li><strong>First Interview</strong><br />
+				        First interview is only offered to applicants selected.<br /><br />
+				    </li>
+				    <li><strong>Second Interview</strong><br />
+				        Second interview is done by the department director.
+				        We may have more interviews if necessary.<br /><br />
+				    </li>
+				    <li><strong>Job Offering</strong><br />
+				        We send you an affer letter to those who are selected in the final stage where we evaluate all the materials and interviews.<br /><br />
+				    </li>
+				    <li><strong>Joining Us</strong><br />
+				        We discuss when you can join us.<br /><br />
+				    </li>
+				</ol>
+			</div>
+			<p class="right"><span class="in_link"><a href="#top">Top</a></span></p>
+			<!--//選考フロー-->
+			
+			<!--応募方法-->
+			<a name="oubo"></a>
+			<div class="box">
+				<h3>Application</h3>
+				<p>
+					You can apply for the jobs at ngi vietnam through the <a href="/recruit/contact">contact form</a>.
+					Please review the job description and send us necessary information.
+					You may be asked to submit your resume or CV in the reply from our personnel.
+					<br /><br />
+					Please do not forget to give us the followings:
+					<ul>
+						<li class="method">Your name</li>
+						<li class="method">Which job you would like to apply for</li>
+						<li class="method">Why you would like to work for us</li>
+						<li class="method">How you can help us if you are hired</li>
+						<li class="method">When you can join us</li>
+					</ul>
+				</p>
+				<p class="right"><span class="in_link"><a href="/recruit/contact">ngi vietnam contact form</a></span></p>
+				<p>
+					We ensure that the fact of your application is kept private and your personal information is only disclosed to ourselves.
+					The result of the documentary selection is usually notified within one to two weeks by email, telephone or mail.
+					Submitted documents will not be returned. We do not disclose the criteria of our selection process.
+				</p>
+			</div>
+			<p class="right"><span class="in_link"><a href="#top">Top</a></span></p>
+			<!--//応募方法ー-->
+			
+			{% for job in jobs %}
+			<!--{{ job.title }}-->
+			<a name="{{ job.key }}"></a>
+			<div class="box recruit">
+				<h3>{{ job.title }}</h3>
+				<div class="recruit_recruit">
+					<table>
+						<tr>
+							<th>Business Unit</th>
+							<td>{{ job.unit }}</td>
+						</tr>
+						<tr>
+							<th>Location</th>
+							<td>{{ job.location }}</td>
+						</tr>
+						<tr>
+							<th>Posted</th>
+							<td>{{ job.posted }}</td>
+						</tr>
+						<tr>
+							<th>Responsibilities</th>
+							<td>
+							    {{ job.responsibilities }}
+							</td>
+						</tr>
+						<tr>
+							<th>Qualifications</th>
+							<td>
+							    {{ job.qualifications }}
+							</td>
+						</tr>
+						<tr>
+							<th>Desired</th>
+							<td>
+						        {{ job.desired }}
+							</td>
+						</tr>
+						<tr>
+							<th>Salary</th>
+							<td>{{ job.salary }}</td>
+						</tr>
+						<tr>
+							<th>General</th>
+							<td>
+							    {{ job.general }}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<p class="right"><a href="#top"><img src="/images/pagetop.gif" alt="Page Top"></a></p>
+			<!--//{{ job.title }}-->
+			{% endfor %}
+{% endblock %}
+
+{% block sidenavi %}
+		<ul>
+			<li class="active"><a href="/recruit">Job Openings</a></li>
+			<li><a href="/recruit/contact">Contact Us</a></li>
+		</ul>
+{% endblock %}

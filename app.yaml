@@ -1,0 +1,26 @@
+application: ngivietnam
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /image
+  static_dir: images
+
+- url: /images
+  static_dir: images
+
+- url: /javascripts
+  static_dir: javascripts
+
+- url: /ext
+  static_dir: ext
+
+- url: /admin/.*
+  script: admin.py
+
+- url: /.*
+  script: main.py

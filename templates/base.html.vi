@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block globalnavi %}
+		<ul>
+			<li class="home"><a href="/vi/" id="home">Trang chủ</a></li>
+			<li class="service"><a href="/vi/service" id="service">Dịch vụ</a></li>
+			<li class="press"><a href="/vi/press" id="press">Phòng báo</a></li>
+			<li class="company"><a href="/vi/company" id="company">Thông tin về công ty</a></li>
+			<li class="recruit"><a href="/vi/recruit" id="recruit">Thông tin tuyển dụng</a></li>
+		</ul>
+{% endblock %}
+
+{% block footer %}
+		<ul>
+			<li class="sitemap"><a href="/vi/sitemap">Bố cục trang web</a></li>
+			<li><a href="http://www.ngigroup.com/jp/privacy/index.html" target="_blank">Cách bảo mật thông tin</a></li>
+			<li><a href="http://www.ngigroup.com/jp/contact/index.html" target="_blank">Địa chỉ liên lạc</a></li>
+		</ul>
+{% endblock %}
