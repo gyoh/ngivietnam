@@ -517,7 +517,6 @@ html:\66irst-child #header form.search #sbb{
 }
 
 
-
 /*　ol liの設定　*/
 #contents .box ol{
 	list-style-type: decimal;
@@ -1050,14 +1049,14 @@ background-color:#F0EFEB;
 
 
 /*　メインでtable使用　*/
-table{
+#contents .company_info table{
 width: 100%;
 }
 
-tbody{
+#contents .company_info tbody{
 }
 
-th {
+#contents .company_info th {
 width:26%;
 padding: 5px;
 font-weight:bold;
@@ -1065,12 +1064,11 @@ background: #fff;
 border: 1px solid #E6E6E5;
 }
 
-td {
+#contents .company_info td {
 padding: 5px;
 background: #fff;
 border: 1px solid #E6E6E5;
 }
-
 
 
 

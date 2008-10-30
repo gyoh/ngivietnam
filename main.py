@@ -115,19 +115,6 @@ class ServiceContact(BaseController):
         self.setlang()
         self.render('services_contact.html', {})
 
-class ServiceContactConfirmEmail(BaseController):
-    def get(self):
-        self.setlang()
-        self.redirect('/service/contact')
-
-    def post(self):
-        self.setlang()
-        sender = self.request.get('email')
-        if mail.is_email_valid(sender):
-            self.render('services_confirm_email.html', {})
-        else:
-            self.render('services_contact.html', {'error': 'Invalid address.'})
-
 class ServiceContactSendEmail(BaseController):
     def get(self):
         self.setlang()
@@ -135,21 +122,19 @@ class ServiceContactSendEmail(BaseController):
         
     def post(self):
         self.setlang()
-        submit = self.request.get('Submit')
-        if submit == 'Edit':
-            self.render('services_contact.html', {})
-        elif submit == 'Send':
-            sender = 'gyo@ngivietnam.com'
-            to = 'contact@ngivietnam.com'
-            subject = "[Services] " + self.request.get('subject')
-            body = "Sender: "+ self.request.get('email') + "\nMessage:\n" + self.request.get('body')
-            try:
-                mail.send_mail(sender, to, subject, body)
-                self.render('services_send_email.html', {})
-            except:
-                self.error(500)
-        else:
-            self.error(404)
+        sender = 'gyo@ngivietnam.com'
+        to = 'contact@ngivietnam.com'
+        subject = "[Service Inquiry] " + self.request.get('subject')
+        body = "Name: " + self.request.get('name') +\
+            "\nCompany: " + self.request.get('company') +\
+            "\nEmail: " + self.request.get('email') +\
+            "\nMessage:\n" + self.request.get('body')
+        try:
+            mail.send_mail(sender, to, subject, body)
+            self.response.out.write('{success:true}')
+        except Exception, e:
+            logging.error('Failed to send email: %s' % e)
+            self.response.out.write('{success:false}')
 
 class Press(BaseController):
     def get(self):
@@ -169,8 +154,8 @@ class Press(BaseController):
             query.max_results = 10
             feed = self.service.Get(query.ToUri())            
             #feed = self.service.GetBlogPostFeed(None, 'http://blog.ngivietnam.com/feeds/posts/default')
-        except Exception:
-            logging.error('Failed to get blog post feed.')
+        except Exception, e:
+            logging.error('Failed to get blog post feed: %s' % e)
 
         entries = []
         if feed is not None:
@@ -216,19 +201,6 @@ class RecruitContact(BaseController):
         self.setlang()
         self.render('jobs_contact.html', {})
 
-class RecruitContactConfirmEmail(BaseController):
-    def get(self):
-        self.setlang()
-        self.redirect('/recruit/contact')
-
-    def post(self):
-        self.setlang()
-        sender = self.request.get('email')
-        if mail.is_email_valid(sender):
-            self.render('jobs_confirm_email.html', {})
-        else:
-            self.render('jobs_contact.html', {'error': 'Invalid address.'})
-
 class RecruitContactSendEmail(BaseController):
     def get(self):
         self.setlang()
@@ -236,21 +208,19 @@ class RecruitContactSendEmail(BaseController):
 
     def post(self):
         self.setlang()
-        submit = self.request.get('Submit')
-        if submit == 'Edit':
-            self.render('jobs_contact.html', {})
-        elif submit == 'Send':
-            sender = 'gyo@ngivietnam.com'
-            to = 'contact@ngivietnam.com'
-            subject = "[Jobs] " + self.request.get('subject')
-            body = "Sender: "+ self.request.get('email') + "\nMessage:\n" + self.request.get('body')
-            try:
-                mail.send_mail(sender, to, subject, body)
-                self.render('jobs_send_email.html', {})
-            except:
-                self.error(500)
-        else:
-            self.error(404)
+        sender = 'gyo@ngivietnam.com'
+        to = 'contact@ngivietnam.com'
+        subject = "[Job Inquiry] " + self.request.get('subject')
+        body = "Name: " + self.request.get('name') +\
+            "\nCompany: " + self.request.get('company') +\
+            "\nEmail: " + self.request.get('email') +\
+            "\nMessage:\n" + self.request.get('body')
+        try:
+            mail.send_mail(sender, to, subject, body)
+            self.response.out.write('{success:true}')
+        except Exception, e:
+            logging.error('Failed to send email: %s' % e)
+            self.response.out.write('{success:false}')
 
 class Sitemap(BaseController):
     def get(self):
@@ -274,9 +244,6 @@ def main():
         ('/service/contact', ServiceContact),
         ('/ja/service/contact', ServiceContact),
         ('/vi/service/contact', ServiceContact),
-        ('/service/contact/confirmemail', ServiceContactConfirmEmail),
-        ('/ja/service/contact/confirmemail', ServiceContactConfirmEmail),
-        ('/vi/service/contact/confirmemail', ServiceContactConfirmEmail),
         ('/service/contact/sendemail', ServiceContactSendEmail),
         ('/ja/service/contact/sendemail', ServiceContactSendEmail),
         ('/vi/service/contact/sendemail', ServiceContactSendEmail),
@@ -298,9 +265,6 @@ def main():
         ('/recruit/contact', RecruitContact),
         ('/ja/recruit/contact', RecruitContact),
         ('/vi/recruit/contact', RecruitContact),
-        ('/recruit/contact/confirmemail', RecruitContactConfirmEmail),
-        ('/ja/recruit/contact/confirmemail', RecruitContactConfirmEmail),
-        ('/vi/recruit/contact/confirmemail', RecruitContactConfirmEmail),
         ('/recruit/contact/sendemail', RecruitContactSendEmail),
         ('/ja/recruit/contact/sendemail', RecruitContactSendEmail),
         ('/vi/recruit/contact/sendemail', RecruitContactSendEmail),

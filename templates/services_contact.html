@@ -2,42 +2,105 @@
 
 {% block title %}Services&nbsp;&gt;&nbsp;Contact Us{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/ext/resources/css/xtheme-gray.css" />
+<script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/ext/ext-all.js"></script>
+<script type="text/javascript">
+Ext.onReady(function(){
+
+    Ext.QuickTips.init();
+
+    // turn on validation errors beside the field globally
+    Ext.form.Field.prototype.msgTarget = 'side';
+
+    var formDiv = Ext.get('form');
+
+    var msg = function(title, msg, icon){
+        Ext.Msg.show({
+            title: title, 
+            msg: msg,
+            minWidth: 200,
+            modal: true,
+            icon: icon,
+            buttons: Ext.Msg.OK
+        });
+    };
+
+    /*
+     * ================  Contact form  =======================
+     */
+
+    var fp = new Ext.FormPanel({
+        labelWidth: 75, // label settings here cascade unless overridden
+        frame: true,
+        title: 'Contact Form',
+        bodyStyle: 'padding:5px 5px 0',
+        width: 530,
+        defaults: {width: 230, allowBlank: false},
+        defaultType: 'textfield',
+        renderTo: formDiv,
+
+        items: [{
+                fieldLabel: 'Name',
+                name: 'name'
+            },{
+                fieldLabel: 'Company',
+                name: 'company',
+                allowBlank: true
+            }, {
+                fieldLabel: 'Email',
+                name:'email',
+                vtype:'email'
+            }, {
+                fieldLabel: 'Subject',
+                name: 'subject'
+            }, {
+                xtype: 'textarea',
+                fieldLabel: 'Content',
+                name: 'body',
+                width: 410,
+                height: 180
+            }
+        ],
+
+        buttons: [{
+            text: 'Send',
+            handler: function(){
+                if(fp.getForm().isValid()){
+	                fp.getForm().submit({
+	                    url: 'contact/sendemail',
+	                    waitMsg: 'Sending your message...',
+	                    success: function(fp, o){
+	                        msg('Success', 'Your message was sent to ngi vietnam. We will get back to you as soon as we can.', Ext.Msg.INFO);
+	                    },
+	                    failure: function(fp, o){
+	                        msg('Failure', 'An error occured while sending your email. Please try again later.', Ext.Msg.ERROR)
+	                    }
+	                });
+                }
+            }
+        },{
+            text: 'Reset',
+            handler: function(){
+                fp.getForm().reset();
+            }
+        }]
+    });
+
+});
+</script>
+{% endblock %}
+
 {% block content %}
 			<h2>Contact Us</h2>
 			<p>
 				Please use the form below to send any requests, questions or comments to us.<br />
 				We will get back to you as soon as we can.
 			</p>
-
-            <form class="contact" action="/service/contact/confirmemail" method="post">
-                <table>
-                    <tr>
-                        <th>Email:&nbsp;</th>
-                        <td>
-                            <input class="text" name="email" type="text" size="30" value="{{ request.params.email }}" />
-                            <font color='red'>{{ error }}</font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Subject:&nbsp;</th>
-                        <td>
-                            <input class="text" name="subject" type="text" size="30" value="{{ request.params.subject }}" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Content:&nbsp;</th>
-                        <td>
-                            <textarea name="body" rows="5" cols="50">{{ request.params.body }}</textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input class="button" type="submit" value="Submit"/>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            
+            <p id='form'></p>
 {% endblock %}
 
 {% block sidenavi %}

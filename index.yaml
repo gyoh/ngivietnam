@@ -17,7 +17,7 @@ indexes:
   - name: posted
     direction: desc
 
-# Unused in query history -- copied from input.
+# Used 9 times in query history.
 - kind: Job
   properties:
   - name: language
@@ -51,7 +51,7 @@ indexes:
   - name: posted
     direction: desc
 
-# Used 65 times in query history.
+# Used 4 times in query history.
 - kind: News
   properties:
   - name: language
@@ -59,7 +59,7 @@ indexes:
   - name: posted
     direction: desc
 
-# Used 2 times in query history.
+# Unused in query history -- copied from input.
 - kind: News
   properties:
   - name: posted
