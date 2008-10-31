@@ -14,7 +14,8 @@
                     target: '{{ news.key }}',
                     html: '<div align="left">{{ news.content|linebreaks }}</div>',
                     width: 400,
-                    trackMouse: true
+                    trackMouse: true,
+                    dismissDelay: 15000 // auto hide after 15 seconds
                 });
             {% endif %}
         {% endfor %}

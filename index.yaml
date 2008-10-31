@@ -17,7 +17,7 @@ indexes:
   - name: posted
     direction: desc
 
-# Used 9 times in query history.
+# Unused in query history -- copied from input.
 - kind: Job
   properties:
   - name: language
