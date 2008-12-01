@@ -2,6 +2,19 @@
 
 {% block title %}About Us{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="/ext/resources/css/xtheme-gray.css" />
+<script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/ext/ext-all.js"></script>
+<!-- GMaps API Key that works for www.ngivietnam.com -->
+<!--script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAUCG2rlIeVFJ07rCgVUYjhhSVbRpeAZk72H9nRSWIwLg0s1ul-BRlbCt360qbQumadan9ZlGxlCWzqg" type="text/javascript"></script-->
+<!-- GMaps API Key that works for localhost -->
+<!--script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAjnequYUkit1gn2dU72mFMhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSdjZKjfeJe_sDj1NFsPTgBvMDOwg"></script>
+<script type="text/javascript" src="/javascripts/Ext.ux.GMapPanel.js"></script>
+<script type="text/javascript" src="/javascripts/gmap.js"></script-->
+{% endblock %}
+
 {% block content %}
 			<h2>Corporate Data</h2>
 			<div class="company_info">
@@ -26,6 +39,7 @@
 					<tr>
 						<th>Head Office</th>
 						<td>
+<!--							205 Thanh Dong Building, 132-138 Kim Ma St., Ba Dinh Dist., Ha Noi, Vietnam&nbsp;<input type="button" id="show-btn" value="Map" /><br />-->
 							205 Thanh Dong Building, 132-138 Kim Ma St., Ba Dinh Dist., Ha Noi, Vietnam<br />
 							（ TEL ）84-4-734-7632<br />
 							（ FAX ）84-4-734-7633

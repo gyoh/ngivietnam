@@ -1049,25 +1049,29 @@ background-color:#F0EFEB;
 
 
 /*　メインでtable使用　*/
-#contents .company_info table{
-width: 100%;
+#contents .company_info table,
+#contents .recruit_recruit table {
+    width: 100%;
 }
 
-#contents .company_info tbody{
+#contents .company_info tbody,
+#contents .recruit_recruit tbody {
 }
 
-#contents .company_info th {
-width:26%;
-padding: 5px;
-font-weight:bold;
-background: #fff;
-border: 1px solid #E6E6E5;
+#contents .company_info th,
+#contents .recruit_recruit th {
+    width:26%;
+    padding: 5px;
+    font-weight:bold;
+    background: #fff;
+    border: 1px solid #E6E6E5;
 }
 
-#contents .company_info td {
-padding: 5px;
-background: #fff;
-border: 1px solid #E6E6E5;
+#contents .company_info td,
+#contents .recruit_recruit td {
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #E6E6E5;
 }
 
 
